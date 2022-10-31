@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57113BF9290DF9F300EB0A26 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57113BF8290DF9F300EB0A26 /* Category.swift */; };
+		571AE2DA290E304F00A1AB8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AE2D9290E304F00A1AB8C /* SceneDelegate.swift */; };
 		57B57BBE29082CDA006F5E91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BBD29082CDA006F5E91 /* AppDelegate.swift */; };
-		57B57BC029082CDA006F5E91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BBF29082CDA006F5E91 /* SceneDelegate.swift */; };
-		57B57BC229082CDA006F5E91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BC129082CDA006F5E91 /* ViewController.swift */; };
-		57B57BC529082CDA006F5E91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B57BC329082CDA006F5E91 /* Main.storyboard */; };
 		57B57BC729082CDC006F5E91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B57BC629082CDC006F5E91 /* Assets.xcassets */; };
-		57B57BCA29082CDC006F5E91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B57BC829082CDC006F5E91 /* LaunchScreen.storyboard */; };
 		57B57BD529082CDC006F5E91 /* HearthstoneCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BD429082CDC006F5E91 /* HearthstoneCardsTests.swift */; };
 		57B57BDF29082CDC006F5E91 /* HearthstoneCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BDE29082CDC006F5E91 /* HearthstoneCardsUITests.swift */; };
 		57B57BE129082CDC006F5E91 /* HearthstoneCardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BE029082CDC006F5E91 /* HearthstoneCardsUITestsLaunchTests.swift */; };
@@ -20,6 +18,16 @@
 		57B57BF329082F2E006F5E91 /* DetailCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BF229082F2E006F5E91 /* DetailCardViewController.swift */; };
 		57B57BF52908685B006F5E91 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BF42908685B006F5E91 /* Info.swift */; };
 		57B57BF729086CD7006F5E91 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BF629086CD7006F5E91 /* Card.swift */; };
+		57B57BFB29088815006F5E91 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57B57BFA29088815006F5E91 /* Alamofire */; };
+		57B57BFD29088A3F006F5E91 /* InfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BFC29088A3F006F5E91 /* InfoService.swift */; };
+		57B57BFF290890EA006F5E91 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57BFE290890EA006F5E91 /* GenericService.swift */; };
+		57B57C0129089239006F5E91 /* ListCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57C0029089239006F5E91 /* ListCardsViewModel.swift */; };
+		57B57C03290ADD8E006F5E91 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57C02290ADD8E006F5E91 /* Networking.swift */; };
+		57B57C05290C6574006F5E91 /* CustomListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57C04290C6574006F5E91 /* CustomListTableViewCell.swift */; };
+		57B57C09290C6FC8006F5E91 /* CustomListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B57C08290C6FC8006F5E91 /* CustomListCollectionViewCell.swift */; };
+		57E5232B290E57F8002653B6 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5232A290E57F8002653B6 /* DataRequest.swift */; };
+		57E5232D290E58C9002653B6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5232C290E58C9002653B6 /* NetworkService.swift */; };
+		57E52330290F6D75002653B6 /* ListCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5232F290F6D75002653B6 /* ListCardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57113BF8290DF9F300EB0A26 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		571AE2D9290E304F00A1AB8C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		57B57BBA29082CDA006F5E91 /* HearthstoneCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthstoneCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B57BBD29082CDA006F5E91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57B57BBF29082CDA006F5E91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57B57BC129082CDA006F5E91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		57B57BC429082CDA006F5E91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57B57BC629082CDC006F5E91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		57B57BC929082CDC006F5E91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B57BCB29082CDC006F5E91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57B57BD029082CDC006F5E91 /* HearthstoneCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HearthstoneCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B57BD429082CDC006F5E91 /* HearthstoneCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthstoneCardsTests.swift; sourceTree = "<group>"; };
@@ -57,6 +63,15 @@
 		57B57BF229082F2E006F5E91 /* DetailCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewController.swift; sourceTree = "<group>"; };
 		57B57BF42908685B006F5E91 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		57B57BF629086CD7006F5E91 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		57B57BFC29088A3F006F5E91 /* InfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoService.swift; sourceTree = "<group>"; };
+		57B57BFE290890EA006F5E91 /* GenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
+		57B57C0029089239006F5E91 /* ListCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsViewModel.swift; sourceTree = "<group>"; };
+		57B57C02290ADD8E006F5E91 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		57B57C04290C6574006F5E91 /* CustomListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListTableViewCell.swift; sourceTree = "<group>"; };
+		57B57C08290C6FC8006F5E91 /* CustomListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListCollectionViewCell.swift; sourceTree = "<group>"; };
+		57E5232A290E57F8002653B6 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		57E5232C290E58C9002653B6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		57E5232F290F6D75002653B6 /* ListCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B57BFB29088815006F5E91 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,16 +123,14 @@
 		57B57BBC29082CDA006F5E91 /* HearthstoneCards */ = {
 			isa = PBXGroup;
 			children = (
+				57E52329290E57D1002653B6 /* Network */,
 				57B57BF82908830D006F5E91 /* Service */,
 				57B57BED29082EC5006F5E91 /* Model */,
 				57B57BEE29082ECD006F5E91 /* View */,
 				57B57BEF29082ED4006F5E91 /* ViewModel */,
 				57B57BBD29082CDA006F5E91 /* AppDelegate.swift */,
-				57B57BBF29082CDA006F5E91 /* SceneDelegate.swift */,
-				57B57BC129082CDA006F5E91 /* ViewController.swift */,
-				57B57BC329082CDA006F5E91 /* Main.storyboard */,
+				571AE2D9290E304F00A1AB8C /* SceneDelegate.swift */,
 				57B57BC629082CDC006F5E91 /* Assets.xcassets */,
-				57B57BC829082CDC006F5E91 /* LaunchScreen.storyboard */,
 				57B57BCB29082CDC006F5E91 /* Info.plist */,
 			);
 			path = HearthstoneCards;
@@ -144,6 +158,7 @@
 			children = (
 				57B57BF42908685B006F5E91 /* Info.swift */,
 				57B57BF629086CD7006F5E91 /* Card.swift */,
+				57113BF8290DF9F300EB0A26 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,8 +166,9 @@
 		57B57BEE29082ECD006F5E91 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				57B57BF029082F07006F5E91 /* ListCardsViewController.swift */,
-				57B57BF229082F2E006F5E91 /* DetailCardViewController.swift */,
+				57E5232E290F6D4F002653B6 /* ListCads */,
+				57B57C07290C6597006F5E91 /* ListInfo */,
+				57B57C06290C657F006F5E91 /* Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +176,7 @@
 		57B57BEF29082ED4006F5E91 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				57B57C0029089239006F5E91 /* ListCardsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,8 +184,46 @@
 		57B57BF82908830D006F5E91 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				57B57BFC29088A3F006F5E91 /* InfoService.swift */,
+				57B57BFE290890EA006F5E91 /* GenericService.swift */,
+				57B57C02290ADD8E006F5E91 /* Networking.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		57B57C06290C657F006F5E91 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				57B57BF229082F2E006F5E91 /* DetailCardViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		57B57C07290C6597006F5E91 /* ListInfo */ = {
+			isa = PBXGroup;
+			children = (
+				57B57BF029082F07006F5E91 /* ListCardsViewController.swift */,
+				57B57C04290C6574006F5E91 /* CustomListTableViewCell.swift */,
+				57B57C08290C6FC8006F5E91 /* CustomListCollectionViewCell.swift */,
+			);
+			path = ListInfo;
+			sourceTree = "<group>";
+		};
+		57E52329290E57D1002653B6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				57E5232A290E57F8002653B6 /* DataRequest.swift */,
+				57E5232C290E58C9002653B6 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		57E5232E290F6D4F002653B6 /* ListCads */ = {
+			isa = PBXGroup;
+			children = (
+				57E5232F290F6D75002653B6 /* ListCardsViewController.swift */,
+			);
+			path = ListCads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +242,9 @@
 			dependencies = (
 			);
 			name = HearthstoneCards;
+			packageProductDependencies = (
+				57B57BFA29088815006F5E91 /* Alamofire */,
+			);
 			productName = HearthstoneCards;
 			productReference = 57B57BBA29082CDA006F5E91 /* HearthstoneCards.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +317,9 @@
 				Base,
 			);
 			mainGroup = 57B57BB129082CDA006F5E91;
+			packageReferences = (
+				57B57BF929088815006F5E91 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 57B57BBB29082CDA006F5E91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,9 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B57BCA29082CDC006F5E91 /* LaunchScreen.storyboard in Resources */,
 				57B57BC729082CDC006F5E91 /* Assets.xcassets in Resources */,
-				57B57BC529082CDA006F5E91 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,13 +361,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E52330290F6D75002653B6 /* ListCardsViewController.swift in Sources */,
 				57B57BF129082F07006F5E91 /* ListCardsViewController.swift in Sources */,
+				57B57C03290ADD8E006F5E91 /* Networking.swift in Sources */,
+				57B57BFD29088A3F006F5E91 /* InfoService.swift in Sources */,
+				57B57BFF290890EA006F5E91 /* GenericService.swift in Sources */,
 				57B57BF329082F2E006F5E91 /* DetailCardViewController.swift in Sources */,
+				57B57C0129089239006F5E91 /* ListCardsViewModel.swift in Sources */,
+				57B57C05290C6574006F5E91 /* CustomListTableViewCell.swift in Sources */,
+				57E5232B290E57F8002653B6 /* DataRequest.swift in Sources */,
 				57B57BF729086CD7006F5E91 /* Card.swift in Sources */,
-				57B57BC229082CDA006F5E91 /* ViewController.swift in Sources */,
+				571AE2DA290E304F00A1AB8C /* SceneDelegate.swift in Sources */,
+				57E5232D290E58C9002653B6 /* NetworkService.swift in Sources */,
+				57B57C09290C6FC8006F5E91 /* CustomListCollectionViewCell.swift in Sources */,
 				57B57BF52908685B006F5E91 /* Info.swift in Sources */,
 				57B57BBE29082CDA006F5E91 /* AppDelegate.swift in Sources */,
-				57B57BC029082CDA006F5E91 /* SceneDelegate.swift in Sources */,
+				57113BF9290DF9F300EB0A26 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,25 +411,6 @@
 			targetProxy = 57B57BDB29082CDC006F5E91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		57B57BC329082CDA006F5E91 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57B57BC429082CDA006F5E91 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		57B57BC829082CDC006F5E91 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57B57BC929082CDC006F5E91 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		57B57BE229082CDC006F5E91 /* Debug */ = {
@@ -490,10 +539,9 @@
 				INFOPLIST_FILE = HearthstoneCards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,10 +570,9 @@
 				INFOPLIST_FILE = HearthstoneCards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,6 +705,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		57B57BF929088815006F5E91 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57B57BFA29088815006F5E91 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57B57BF929088815006F5E91 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57B57BB229082CDA006F5E91 /* Project object */;
 }

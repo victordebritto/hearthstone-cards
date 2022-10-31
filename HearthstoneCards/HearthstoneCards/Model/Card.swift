@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card {
+struct Card: Decodable {
     
 // TODO: Remover
 //    A imagem principal do cartão

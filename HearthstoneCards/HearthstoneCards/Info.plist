@@ -4,6 +4,12 @@
 <dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>X-RapidAPI-Host</key>
+		<string>omgvamp-hearthstone-v1.p.rapidapi.com</string>
+		<key>X-RapidAPI-Key</key>
+		<string>3111e87e19msh3c71ea08afc2e9dp15407ajsn6312f0f43f72</string>
+		<key>X-RapidAPI-URL</key>
+		<string>https://omgvamp-hearthstone-v1.p.rapidapi.com</string>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>
@@ -15,8 +21,6 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
 				</dict>
 			</array>
 		</dict>

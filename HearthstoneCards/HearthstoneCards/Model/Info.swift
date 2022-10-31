@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-struct Info {
+struct Info: Decodable {
     
     let classes: [String]
     let sets: [String]
@@ -31,7 +30,18 @@ struct Info {
         self.races = races
     }
     
+    func parseToCategoryArray() -> [Category] {
+        
+        return [Category(type: CategoryTypes.classes, items: self.classes),
+                Category(type: CategoryTypes.sets, items: self.sets),
+                Category(type: CategoryTypes.types, items: self.types),
+                Category(type: CategoryTypes.factions, items: self.factions),
+                Category(type: CategoryTypes.qualities, items: self.qualities),
+                Category(type: CategoryTypes.races, items: self.races)]
+    }
 }
+
+
 // TODO: Remover
 //Cards by Class
 //Card Set
