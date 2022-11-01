@@ -13,7 +13,8 @@ protocol ListCardsCategoryViewModelDelegate: AnyObject {
 }
 
 protocol ListCardsCategoryViewModelCoordinator: AnyObject {
-    func selectCard()
+    func showCardDetail(card: Card)
+    func dismiss()
 }
 
 class ListCardsCategoryViewModel {
@@ -32,23 +33,25 @@ class ListCardsCategoryViewModel {
         service = ServiceHearthstone()
     }
     
-    func dataSelect(category: CategoryTypes, item: String) {
-        self.category = category
-        self.itemSelect = item
-    }
-    
     func getCategoryItems() {
         service?.getCardsByCategory(category: category, item: itemSelect, completion: { result, failure in
             if let failure {
                 self.delegate?.showError(error: failure)
+                self.delegateCoordinator?.dismiss()
+                return
             }
             
             guard let result = result else {
                 self.delegate?.showError(error: failure ?? Error.genericError)
+                self.delegateCoordinator?.dismiss()
                 return
             }
             
             self.delegate?.categoryItems(cards: result)
         })
+    }
+    
+    func showDatailCard(card: Card) {
+        delegateCoordinator?.showCardDetail(card: card)
     }
 }

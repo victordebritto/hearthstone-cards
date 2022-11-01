@@ -9,6 +9,7 @@ import Foundation
 
 protocol ListCardsViewModelDelegate: AnyObject {
     func setCategoryData(category: [Category])
+    func showError(error: Error)
 }
 
 protocol ListCardsViewModelCoordinatorDelegate: AnyObject {
@@ -26,11 +27,12 @@ class ListCardsViewModel {
         
         infoService.getInfo { success, failure in
             if let failure {
-                //show modal erro
+                self.delegate?.showError(error: failure)
+                return
             }
             
             guard let category = success?.parseToCategoryArray() else {
-                // call erro
+                self.delegate?.showError(error: failure ?? Error.genericError)
                 return
             }
             self.delegate?.setCategoryData(category: category)

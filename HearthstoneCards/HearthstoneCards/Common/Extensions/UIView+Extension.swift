@@ -21,8 +21,8 @@ extension UIView {
     private var overlayView: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.black
-        view.alpha = 0.5
+        view.backgroundColor = .white
+        view.alpha = 0.8
         view.tag = overlayViewTag
         return view
     }

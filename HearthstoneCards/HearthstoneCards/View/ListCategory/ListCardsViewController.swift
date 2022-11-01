@@ -11,8 +11,6 @@ class ListCardsViewController: UIViewController {
     
         
     private var tableView: UITableView!
-    private var loading: UIActivityIndicatorView!
-    private var loadView: UIView!
     
     private var categories: [Category]?
     
@@ -29,7 +27,7 @@ class ListCardsViewController: UIViewController {
         super.viewDidLoad()
         
         self.defineLayout()
-        loadingState(isOn: true)
+        view.displayActivityIndicator(shouldDisplay: true)
         viewModel?.delegate = self
         viewModel?.getCategories()
         self.navigationItem.title = "Hearthstone"
@@ -37,38 +35,11 @@ class ListCardsViewController: UIViewController {
 
     }
     
-    private func loadingState(isOn: Bool) {
-        switch isOn{
-            case true:
-                loadView.isHidden = false
-                loading.startAnimating()
-            case false:
-                loadView.isHidden = true
-                loading.stopAnimating()
-        }
-    }
-    
     private func defineLayout() {
-        
-        loadView = {
-            let vw = UIView()
-            vw.translatesAutoresizingMaskIntoConstraints = false
-            vw.backgroundColor = .white
-            vw.isHidden = false
-            return vw
-        }()
-        
-        loading = {
-            let l = UIActivityIndicatorView(style: .large)
-            l.translatesAutoresizingMaskIntoConstraints = false
-            l.color = .gray
-            return l
-        }()
         
         tableView = {
             let tb = UITableView()
             tb.translatesAutoresizingMaskIntoConstraints = false
-            tb.separatorStyle = .singleLine
             tb.dataSource = self
             tb.delegate = self
             tb.backgroundColor = .white
@@ -77,18 +48,9 @@ class ListCardsViewController: UIViewController {
         }()
         
         view.addSubview(tableView)
-        
-        view.addSubview(loadView)
-        loadView.addSubview(loading)
+ 
         
         NSLayoutConstraint.activate([
-            loadView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            loadView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            loadView.topAnchor.constraint(equalTo: view.topAnchor),
-            loadView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            loading.centerYAnchor.constraint(equalTo: loadView.centerYAnchor),
-            loading.centerXAnchor.constraint(equalTo: loadView.centerXAnchor),
-            
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -128,6 +90,23 @@ extension ListCardsViewController:  ListCardsViewModelDelegate {
         self.categories = category
         tableView.reloadData()
         
-        loadingState(isOn: false)
+        view.displayActivityIndicator(shouldDisplay: false)
+    }
+    
+    func showError(error: Error) {
+        var title = ""
+        var message = ""
+        switch error {
+        case .errorRequest(_):
+            title = "Serviço"
+            message = "Erro ao tentar acessar o servico da Hearthstone"
+        case .invalidEndpoint:
+            title = "Endpoit"
+            message = "End point incorreto"
+        case .genericError:
+            title = "Erro"
+            message = "Erro inesperado, tente novamente"
+        }
+        self.showAlert(title: title, message: message, actionTitle: "OK")
     }
 }

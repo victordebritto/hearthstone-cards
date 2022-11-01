@@ -20,9 +20,13 @@ class DetailCardCoordinator: Coordinator{
     }
     
     func start() {
-        
+        let viewModel = DetailCardViewModel(card: self.card)
+        viewModel.delegateCoordinator = self
+        let controller = DetailCardViewController.create(viewModel: viewModel, card: self.card)
         navigationController.navigationBar.topItem?.title = ""
-    //    navigationController.pushViewController(viewController, animated: true)
-                
+        navigationController.pushViewController(controller, animated: true)
     }
+}
+extension DetailCardCoordinator: DetailCardViewModelCoordinatorDelegate {
+    
 }

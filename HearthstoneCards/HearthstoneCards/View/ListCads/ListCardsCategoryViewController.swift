@@ -71,7 +71,7 @@ extension ListCardsCategoryViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setCardName(name: cards[indexPath.row].name)
+        cell.setCardName(name: cards[indexPath.row].name ?? "-")
         return cell
     
     }
@@ -79,9 +79,10 @@ extension ListCardsCategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
-  //  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Detail Card
- //   }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.showDatailCard(card: cards[indexPath.row])
+    }
 }
 
 extension ListCardsCategoryViewController: UITableViewDelegate { }

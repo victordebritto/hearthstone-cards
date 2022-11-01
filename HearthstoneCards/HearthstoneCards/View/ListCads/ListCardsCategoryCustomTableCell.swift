@@ -17,15 +17,14 @@ class ListCardsCategoryCustomTableCell: UITableViewCell {
         super.prepareForReuse()
         self.label.text = ""
     }
-    
-    func setCardName(name: String) {
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = name
-    }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         defineLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func defineLayout() {
@@ -38,7 +37,8 @@ class ListCardsCategoryCustomTableCell: UITableViewCell {
         contentView.backgroundColor = .white
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setCardName(name: String) {
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = name
     }
 }

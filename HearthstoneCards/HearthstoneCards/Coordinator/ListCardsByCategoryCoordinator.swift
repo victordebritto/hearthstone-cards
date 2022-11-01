@@ -34,7 +34,15 @@ class ListCardsByCategoryCoordinator: Coordinator{
 }
 
 extension ListCardsByCategoryCoordinator: ListCardsCategoryViewModelCoordinator {
-    func selectCard() {
-        //OpenDetail Card
+    func dismiss() {
+        navigationController.dismiss(animated: true)
+        self.childCoordinators = []
+    }
+    
+    func showCardDetail(card: Card) {
+        let coodinator = DetailCardCoordinator(navigationController: navigationController, card: card)
+        self.childCoordinators.append(coodinator)
+        
+        coodinator.start()
     }
 }

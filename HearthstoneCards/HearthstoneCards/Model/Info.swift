@@ -41,11 +41,3 @@ struct Info: Decodable {
     }
 }
 
-
-// TODO: Remover
-//Cards by Class
-//Card Set
-//Cards by Type
-//Cards by Faction
-//Cards by Quality
-//Cards by Race
