@@ -22,25 +22,23 @@ struct Card: Decodable {
 //    Custo ok
 //    Health ok
     
-    let cardID: String
-    let dbfID: Int
+    let cardId: String
     let name: String
     let type: String
     let faction: String?
     let rarity: String?
-    let cost: Int
-    let attack: Int
-    let health: Int
-    let text: String
+    let cost: Int?
+    let attack: Int?
+    let health: Int?
+    let text: String?
     let flavor: String?
     let artist: String?
 
     let img: String?
     let imgGold: String?
     
-    init(cardID: String, dbfID: Int, name: String, type: String, faction: String?, rarity: String?, cost: Int, attack: Int, health: Int, text: String, flavor: String?, artist: String?, img: String?, imgGold: String?) {
-        self.cardID = cardID
-        self.dbfID = dbfID
+    init(cardId: String, name: String, type: String, faction: String?, rarity: String?, cost: Int?, attack: Int?, health: Int?, text: String?, flavor: String?, artist: String?, img: String?, imgGold: String?) {
+        self.cardId = cardId
         self.name = name
         self.type = type
         self.faction = faction

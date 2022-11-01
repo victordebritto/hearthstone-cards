@@ -7,26 +7,20 @@
 
 import Foundation
 
-protocol ListCardsViewModelDelegate {
-    func getCategories()
+protocol ListCardsViewModelDelegate: AnyObject {
+    func setCategoryData(category: [Category])
+}
+
+protocol ListCardsViewModelCoordinatorDelegate: AnyObject {
+    func openCategory(category: CategoryTypes, item: String)
 }
 
 class ListCardsViewModel {
         
-    private let infoService: InfoServiceProtocol = InfoService()
+    private let infoService: ServiceHearthstoreProtocol = ServiceHearthstone()
     
-    var view: ListCardsViewDelegate
-    
-    private func callInfo() {
-        
-    }
-    
-    init(view: ListCardsViewDelegate) {
-        self.view = view
-    }
-}
-
-extension ListCardsViewModel: ListCardsViewModelDelegate {
+    weak var delegateCoordinator: ListCardsViewModelCoordinatorDelegate?
+    weak var delegate: ListCardsViewModelDelegate?
     
     func getCategories() {
         
@@ -39,18 +33,11 @@ extension ListCardsViewModel: ListCardsViewModelDelegate {
                 // call erro
                 return
             }
-            self.view.setCategoryData(category: category)
+            self.delegate?.setCategoryData(category: category)
         }
     }
     
-    // TODO: Remover
-    func mock() -> [Category] {
-        let info = Info(classes: ["Teste1", "teste 2"],
-                       sets: ["Teste1", "teste 2", "Teste1", "teste 2"],
-                       types: ["Teste1", "teste 2","Teste1", "teste 2"],
-                       factions: ["Teste1", "teste 2","Teste1", "teste 2", "Teste1", "teste 2"],
-                       qualities: ["Teste1"],
-                       races: ["Teste1", "teste 2"]).parseToCategoryArray()
-        return info
+    func openCategory(category: CategoryTypes, item: String) {
+        self.delegateCoordinator?.openCategory(category: category, item: item)
     }
 }

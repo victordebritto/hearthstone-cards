@@ -8,35 +8,38 @@
 import Alamofire
 import Foundation
 
-protocol InfoServiceProtocol: GenericService {
-    func resolveCategoryURL(category: CategoryTypes, parameter: String) -> String
+protocol ServiceHearthstoreProtocol: GenericService {
     func getInfo(completion: @escaping completion <Info?>)
     func getCardsByCategory(category: CategoryTypes, item: String, completion: @escaping completion <[Card]?>)
 }
 
-class InfoService: InfoServiceProtocol {
+class ServiceHearthstone: ServiceHearthstoreProtocol {
     private let headers: [HTTPHeader] = [
         HTTPHeader(name: "X-RapidAPI-Key", value: "3111e87e19msh3c71ea08afc2e9dp15407ajsn6312f0f43f72"),
         HTTPHeader(name: "X-RapidAPI-Host", value: "omgvamp-hearthstone-v1.p.rapidapi.com")
     ]
     private let baseUrl = "https://omgvamp-hearthstone-v1.p.rapidapi.com"
     
-    internal func resolveCategoryURL(category: CategoryTypes, parameter: String) -> String {
+    private func resolveCategoryURL(category: CategoryTypes, parameter: String) -> String {
         let url = baseUrl + "/cards"
+        
+        guard let encodedParameter = parameter.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            return ""
+        }
         
         switch category {
         case .classes:
-            return url + "/classes/" + parameter
+            return url + "/classes/" + encodedParameter
         case .sets:
-            return url + "/sets/" + parameter
+            return url + "/sets/" + encodedParameter
         case .types:
-            return url + "/types/" + parameter
+            return url + "/types/" + encodedParameter
         case .factions:
-            return url + "/factions/" + parameter
+            return url + "/factions/" + encodedParameter
         case .qualities:
-            return url + "/qualities/" + parameter
+            return url + "/qualities/" + encodedParameter
         case .races:
-            return url + "/races/" + parameter
+            return url + "/races/" + encodedParameter
         }
     }
     

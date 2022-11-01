@@ -29,6 +29,8 @@ class CustomListTableViewCell: UITableViewCell {
     private var type: CategoryTypes?
     private var nameItems: [String]?
     
+    var viewModel: ListCardsViewModel?
+    
     private func defineLayout() {
         stackView = {
             let sv = UIStackView()
@@ -87,6 +89,7 @@ class CustomListTableViewCell: UITableViewCell {
         ])
     }
     
+    
     func setData(typeSelect: CategoryTypes, nameItems: [String]) {
         self.type = typeSelect
         self.typeLabel.text = typeSelect.rawValue
@@ -105,7 +108,6 @@ extension CustomListTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //let cell = CustomListCollectionViewCell()
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomListCollectionViewCell.identifier,
                                                       for: indexPath) as! CustomListCollectionViewCell
         if let type = type, let nameItems = nameItems {
@@ -118,6 +120,7 @@ extension CustomListTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        guard let type = type, let nameItems = nameItems else { return  }
+        viewModel?.openCategory(category: type, item: nameItems[indexPath.row])
     }
 }

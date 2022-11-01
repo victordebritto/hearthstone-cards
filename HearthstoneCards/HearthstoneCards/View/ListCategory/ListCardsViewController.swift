@@ -7,13 +7,8 @@
 
 import UIKit
 
-protocol ListCardsViewDelegate {
-    
-    func setCategoryData(category: [Category])
-    
-}
-
 class ListCardsViewController: UIViewController {
+    
         
     private var tableView: UITableView!
     private var loading: UIActivityIndicatorView!
@@ -21,20 +16,25 @@ class ListCardsViewController: UIViewController {
     
     private var categories: [Category]?
     
-    var viewModel: ListCardsViewModelDelegate?
+    var viewModel: ListCardsViewModel?
+    
+    static func create(viewModel: ListCardsViewModel) -> ListCardsViewController {
+        let viewcontroller = ListCardsViewController()
+        viewcontroller.viewModel = viewModel
+        
+        return viewcontroller
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ListCardsViewModel(view: self) // TODO: Mandar pra dentro do coordinator
         
         self.defineLayout()
         loadingState(isOn: true)
+        viewModel?.delegate = self
         viewModel?.getCategories()
         self.navigationItem.title = "Hearthstone"
         self.navigationItem.style = .navigator
-    //    tableView.reloadData()
 
-     //   loadingState(isOn: false) //migrar pra resposta do serviço
     }
     
     private func loadingState(isOn: Bool) {
@@ -113,6 +113,7 @@ extension ListCardsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomListTableViewCell.identifier, for: indexPath) as! CustomListTableViewCell
         
         cell.backgroundColor = .white
+        cell.viewModel = viewModel
         guard let category = categories?[indexPath.row] else {
             return UITableViewCell()
         }
@@ -122,7 +123,7 @@ extension ListCardsViewController: UITableViewDataSource {
     }
 }
 
-extension ListCardsViewController: ListCardsViewDelegate {
+extension ListCardsViewController:  ListCardsViewModelDelegate {
     func setCategoryData(category: [Category]) {
         self.categories = category
         tableView.reloadData()
